@@ -14,6 +14,6 @@ Method used to compare RPS values:
 
 ### Other notes:
 - Classes used to avoid making seperate player and computer variables.
-  - Instead of int playerchoice, int computerchoice; -> player.choice, comp.choice;
+  - Instead of ```int playerchoice, int computerchoice;``` -> ```player.choice, comp.choice;```
 
   - Makes things easier to manage.
