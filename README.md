@@ -11,6 +11,7 @@ Method used to compare RPS values:
   - EX: Scissors[-1] vs Rock[0] -> `-1 * 0 = 0` -> Rock wins.
 
   - EX2: Rock[0] vs Paper[1] -> `0 * 1 = 0` -> Paper wins.
+ - Done to avoid having a bunch of if statements for each of the choices.
 
 ### Other notes:
 - Classes used to avoid making seperate player and computer variables.
