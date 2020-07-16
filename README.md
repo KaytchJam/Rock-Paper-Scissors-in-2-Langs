@@ -6,6 +6,7 @@ Method used to compare RPS values:
 - Rock, Paper, Scissors assigned values of `[ 0, 1, -1 ]` respectively.
 - If the `player choice * computer choice` is `< 0` , the user with lower numbers wins.
   - EX: Paper[1] vs Scissors[-1] -> `1 * -1 = -1` -> Scissors wins.
+  
 - Likewise, if the `player choice * computer choice` is `>= 0`, the user with the higher number wins.
   - EX: Scissors[-1] vs Rock[0] -> `-1 * 0 = 0` -> Rock wins.
 
