@@ -25,9 +25,13 @@ public class Sequence {
 		System.out.print("Enter your choice: ");
 		String p_choice = input.next();
 		p_choice.toLowerCase();
-		if (p_choice.contains("a") || p_choice.contains("rock")) { return 0; } 
-		else if (p_choice.contains("b") || p_choice.contains("paper")) { return 1; } 
-		else if (p_choice.contains("c")|| p_choice.contains("scissors") || p_choice == "3") { return 2; }
+		final String[] rockSet = {"rock", "a", "r", "1"};
+		final String[] papSet = {"paper", "b", "p", "2"};
+		final String[] scisSet = {"scissors", "scissor", "s", "c", "scisor", "3"};
+		//if (p_choice.contains("a") || p_choice.contains("rock")) { return 0; }
+		if (includes(rockSet, p_choice)) { return 0; }
+		else if (includes(papSet, p_choice)) { return 1; } 
+		else if (includes(scisSet, p_choice)) { return 2; }
 		else { 
 			System.out.println("Choice randomized.");
 			return rand.nextInt(3); 
@@ -48,6 +52,13 @@ public class Sequence {
 			if (p_move > cpu_move) { player1.wins = true; }
 			else if (p_move < cpu_move) { comp1.wins = true; }
 		}
+	}
+	
+	static boolean includes(String[] contents, String item) { //Checks array for value
+		for (int c = 0; c < contents.length; c++) {
+			//System.out.println(contents[c]);
+			if (contents[c].equals(item)) { return true; }
+		} return false;
 	}
 	
 	public static void main(String[] args) { // The game runs here
@@ -88,9 +99,11 @@ public class Sequence {
 			System.out.print(replay_txt);
 			
 			String try_again = game.input.next();
+			final String[] againSet = {"yes", "y", "ye", "yeet", "oui", "1"};
+			final String[] quitSet = {"no", "n", "nah", "nay", "non", "2"};
 			try_again.toLowerCase();
-			if (try_again.contains("y")) { round++; } // Do nothing
-			else if (try_again.contains("n")) { break; } else { break; }
+			if (includes(againSet, try_again)) { round++; } // Do nothing
+			else if (includes(quitSet, try_again)) { break; } else { break; }
 		}
 	}
 }
