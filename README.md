@@ -11,3 +11,9 @@ Method used to compare RPS values:
 
 > EX2: Rock[0] vs Paper[1] -> 0 * 1 = 0 -> Paper wins
 
+Other notes:
+-
+- Classes used to avoid making seperate player and computer variables
+> Instead of int playerchoice, int computerchoice; -> player.choice, comp.choice;
+
+- Makes things easier to manage.
